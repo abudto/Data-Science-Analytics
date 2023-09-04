@@ -32,9 +32,8 @@ def main():
                                                  'Land Cruiser', 'E300', 'Kijang Innova Zenix', 'Palisade',
                                                  'IONIQ 5'))
     user_input['Year'] = st.selectbox('Year',   (2018, 2021, 2017, 2016, 2014, 2019, 2022, 2023, 2020, 2013, 2015,
-                                      2012, 2009, 2002, 2011, 2005, 2004, 2007, 1994, 2008, 2000, 2010,
-                                      2006, 2003, 1992, 1997, 1991, 1996, 2001, 1999, 1990, 1993, 1982,
-                                      1995, 1987, 1989, 1998, 1984, 1986, 1975, 1981, 1988))
+                                      2012, 2009, 2002, 2011, 2005, 2004, 2007, 2008, 2000, 2010,
+                                      2006))
     user_input['Mileage'] = st.text_input('Mileage')
     user_input['Brand'] = st.selectbox('Brand', ('Honda', 'Toyota', 'Suzuki', 'Nissan', 'Daihatsu', 'Mitsubishi',
                                                  'Mercedes-Benz', 'Mazda', 'Wuling', 'BMW', 'others', 'Land Rover',
@@ -85,6 +84,10 @@ def main():
 
         # Create a DataFrame from the user input dictionary
         user_input_df = pd.DataFrame(user_input_dict)
+
+        # Feature Engineering, add Car_age and drop Year
+        user_input_df['Car_age'] = 2023 - user_input_df['Year']
+        user_input_df.drop(['Year'], axis=1, inplace=True)
 
         # Debugging: Print the shape and columns of the input data
         # print("Input Data Shape:", user_input_df.shape)
