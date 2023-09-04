@@ -15,6 +15,10 @@ import streamlit as st
 loaded_model = pickle.load(open('Used_Car_Price_Prediction/Random_Forest_Regression.pkl', 'rb'))
 loaded_encoder = pickle.load(open('Used_Car_Price_Prediction/Column_tnf.pkl', 'rb'))
 
+# For Running the code locally, uncomment the code below
+# loaded_model = pickle.load(open('Random_Forest_Regression.pkl', 'rb'))
+# loaded_encoder = pickle.load(open('Column_tnf.pkl', 'rb'))
+
 
 def main():
 
