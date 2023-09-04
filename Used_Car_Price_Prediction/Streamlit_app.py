@@ -12,8 +12,8 @@ import pandas as pd
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(open('Random_Forest_Regression.pkl', 'rb'))
-loaded_encoder = pickle.load(open('Column_tnf.pkl', 'rb'))
+loaded_model = pickle.load(open('Used_Car_Price_Prediction/Random_Forest_Regression.pkl', 'rb'))
+loaded_encoder = pickle.load(open('Used_Car_Price_Prediction/Column_tnf.pkl', 'rb'))
 
 
 def main():
